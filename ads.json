@@ -1,0 +1,18 @@
+{
+  "waitSeconds": 90,
+  "bonusSeconds": 30,
+  "maxBonuses": 3,
+  "ads": [
+    {
+      "id": "namuna-1",
+      "tag": "Namuna",
+      "title": "Reklama joyi bo'sh",
+      "cover": "logo.png",
+      "text": "Bu yerda sizning mahsulotingiz haqida ma'lumot bo'ladi.\nHar bir qator alohida abzats bo'lib chiqadi.",
+      "video": "",
+      "link": "https://mrmaskmc.github.io/flexvid-site/",
+      "linkKind": "site",
+      "linkLabel": "FlexVid saytiga o'tish"
+    }
+  ]
+}
