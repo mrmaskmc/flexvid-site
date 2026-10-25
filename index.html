@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlexVid - videoni brauzerda siqish</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#2ecc71">
+<meta property="og:title" content="FlexVid">
+<meta property="og:image" content="https://mrmaskmc.github.io/flexvid-site/logo.png">
+<meta name="description" content="FlexVid: videoni kesmasdan, brauzerning o'zida siqing va formatini o'zgartiring. Hech narsa o'rnatish shart emas, videolar kompyuteringizdan chiqmaydi.">
+<style>
+  :root{
+    --bg:#0e1116; --card:#171b22; --line:#262c36; --text:#e8ebf0; --muted:#9aa4b2;
+    --accent:#2ecc71; --accent2:#58d68d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f7f9; --card:#ffffff; --line:#e1e4e9; --text:#171a20; --muted:#5b6573; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:800;font-size:20px;letter-spacing:.3px;display:flex;align-items:center;gap:10px}
+  .logo img{width:34px;height:34px;border-radius:8px;display:block}
+  .logo .wm span{color:var(--accent)}
+  .nav-right{display:flex;gap:14px;align-items:center}
+  .nav a.l{color:var(--muted);text-decoration:none;font-size:14px}
+  .nav a.l:hover{color:var(--text)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang button{background:none;border:0;color:var(--muted);padding:5px 10px;cursor:pointer;font:600 13px system-ui}
+  .lang button.on{background:var(--accent);color:#06210f}
+  .hero{padding:72px 0 56px;text-align:center}
+  .hero h1{font-size:clamp(32px,6vw,54px);line-height:1.1;margin:0 0 16px;font-weight:800}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:18px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#06210f;font-weight:700;text-decoration:none;border:0;font-size:16px}
+  .btn:hover{filter:brightness(1.08)}
+  .btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-left:8px}
+  .small{color:var(--muted);font-size:13px;margin-top:14px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  ol.steps{padding-left:20px;margin:0}
+  ol.steps li{margin:8px 0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600}
+  details p{margin:10px 0 0;color:var(--muted)}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .plan h3{margin:0 0 4px}
+  .plan ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+  [data-l]{display:none}
+  html[lang="uz"] [data-l="uz"],html[lang="ru"] [data-l="ru"],html[lang="en"] [data-l="en"]{display:revert}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><img src="logo.png" alt="FlexVid logo" width="34" height="34"><span class="wm">Flex<span>Vid</span></span></div>
+    <div class="nav-right">
+      <a class="l" href="#how"><span data-l="uz">Qanday ishlaydi</span><span data-l="ru">Как работает</span><span data-l="en">How it works</span></a>
+      <a class="l" href="#faq">FAQ</a>
+      <a class="l" href="#privacy"><span data-l="uz">Maxfiylik</span><span data-l="ru">Конфиденциальность</span><span data-l="en">Privacy</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-set="uz" class="on">UZ</button>
+        <button data-set="ru">RU</button>
+        <button data-set="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>
+      <span data-l="uz">Videoni <em>kesmasdan</em> siqing</span>
+      <span data-l="ru">Сжимайте видео <em>без обрезки</em></span>
+      <span data-l="en">Shrink video <em>without cutting</em> it</span>
+    </h1>
+    <p>
+      <span data-l="uz">FlexVid brauzerning o'zida video hajmini kichraytiradi va formatini o'zgartiradi. Hech narsa o'rnatish shart emas. Videolaringiz kompyuteringizdan chiqmaydi.</span>
+      <span data-l="ru">FlexVid уменьшает размер видео и меняет формат прямо в браузере. Ничего устанавливать не нужно. Ваши видео не покидают компьютер.</span>
+      <span data-l="en">FlexVid shrinks video and converts formats right in your browser. Nothing to install. Your videos never leave your device.</span>
+    </p>
+    <a class="btn" href="app.html">
+      <span data-l="uz">Brauzerda ochish</span>
+      <span data-l="ru">Открыть в браузере</span>
+      <span data-l="en">Open in browser</span>
+    </a>
+    <a class="btn ghost" href="#how"><span data-l="uz">Batafsil</span><span data-l="ru">Подробнее</span><span data-l="en">Learn more</span></a>
+    <div class="small">
+      <span data-l="uz">Chrome yoki Edge tavsiya etiladi · Bepul rejim mavjud · Ro'yxatdan o'tish shart emas</span>
+      <span data-l="ru">Рекомендуем Chrome или Edge · Есть бесплатный режим · Регистрация не нужна</span>
+      <span data-l="en">Chrome or Edge recommended · Free mode available · No sign-up</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="grid">
+      <div class="card">
+        <h3><span data-l="uz">Hajm tanlang</span><span data-l="ru">Выберите размер</span><span data-l="en">Pick a size</span></h3>
+        <p><span data-l="uz">Natija necha MB bo'lishini o'zingiz belgilaysiz, FlexVid shunga moslab siqadi.</span><span data-l="ru">Вы задаёте желаемый размер в МБ, FlexVid подбирает сжатие.</span><span data-l="en">Set the target size in MB and FlexVid fits the video to it.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Format va o'lcham</span><span data-l="ru">Формат и разрешение</span><span data-l="en">Format and resolution</span></h3>
+        <p><span data-l="uz">MP4 yoki MKV. Piksel o'lchamini ham o'zgartirasiz (360p dan 1080p gacha).</span><span data-l="ru">MP4 или MKV. Можно менять разрешение (от 360p до 1080p).</span><span data-l="en">MP4 or MKV. Change the resolution too (360p to 1080p).</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Kesilmaydi</span><span data-l="ru">Без обрезки</span><span data-l="en">No cutting</span></h3>
+        <p><span data-l="uz">Video to'liq uzunligicha qoladi, faqat hajmi kichrayadi.</span><span data-l="ru">Видео остаётся полной длины, уменьшается только размер.</span><span data-l="en">The video keeps its full length; only the file size shrinks.</span></p>
+      </div>
+      <div class="card">
+        <h3><span data-l="uz">Brauzerda ishlaydi</span><span data-l="ru">Работает в браузере</span><span data-l="en">Runs in your browser</span></h3>
+        <p><span data-l="uz">Hamma ish sizning qurilmangizda bajariladi. Video serverga yuklanmaydi.</span><span data-l="ru">Вся обработка на вашем устройстве. Видео не загружается на сервер.</span><span data-l="en">All processing happens on your device. The video is not uploaded to a server.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2><span data-l="uz">Qanday ishlaydi</span><span data-l="ru">Как это работает</span><span data-l="en">How it works</span></h2>
+    <ol class="steps" data-l="uz">
+      <li><b>Brauzerda ochish</b> tugmasini bosing.</li>
+      <li>Videoni tanlang yoki sahifaga tashlang.</li>
+      <li>Natija hajmi, format va piksel o'lchamini belgilang.</li>
+      <li><b>Siqishni boshlash</b> ni bosing va tayyor bo'lguncha sahifani yopmang.</li>
+      <li>Natijani yuklab oling.</li>
+    </ol>
+    <ol class="steps" data-l="ru">
+      <li>Нажмите <b>Открыть в браузере</b>.</li>
+      <li>Выберите видео или перетащите его на страницу.</li>
+      <li>Задайте размер результата, формат и разрешение.</li>
+      <li>Нажмите <b>Начать сжатие</b> и не закрывайте страницу до окончания.</li>
+      <li>Скачайте результат.</li>
+    </ol>
+    <ol class="steps" data-l="en">
+      <li>Press <b>Open in browser</b>.</li>
+      <li>Pick a video or drop it on the page.</li>
+      <li>Set the target size, format and resolution.</li>
+      <li>Press <b>Start compressing</b> and keep the page open until it finishes.</li>
+      <li>Download the result.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span data-l="uz">Rejalar</span><span data-l="ru">Режимы</span><span data-l="en">Modes</span></h2>
+    <div class="plans">
+      <div class="card plan">
+        <h3><span data-l="uz">Bepul</span><span data-l="ru">Бесплатный</span><span data-l="en">Free</span></h3>
+        <ul data-l="uz"><li>Barcha asosiy imkoniyatlar</li><li>Natija taxminan 90 soniyadan keyin ochiladi</li><li>Reklamani ochib ko'rsangiz, kutish qisqaradi</li></ul>
+        <ul data-l="ru"><li>Все основные функции</li><li>Результат открывается примерно через 90 секунд</li><li>Просмотр рекламы сокращает ожидание</li></ul>
+        <ul data-l="en"><li>All core features</li><li>The result unlocks after about 90 seconds</li><li>Opening an ad shortens the wait</li></ul>
+      </div>
+      <div class="card plan">
+        <h3>Premium <small style="color:var(--muted);font-weight:400"><span data-l="uz">(tez orada)</span><span data-l="ru">(скоро)</span><span data-l="en">(coming soon)</span></small></h3>
+        <ul data-l="uz"><li>Kutishsiz</li><li>Reklamasiz</li><li>Loyihani qo'llab-quvvatlaydi</li></ul>
+        <ul data-l="ru"><li>Без ожидания</li><li>Без рекламы</li><li>Поддержка проекта</li></ul>
+        <ul data-l="en"><li>No waiting</li><li>No ads</li><li>Supports the project</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+
+    <details><summary><span data-l="uz">Videoning sifati yomonlashadimi?</span><span data-l="ru">Ухудшится ли качество?</span><span data-l="en">Will quality drop?</span></summary>
+      <p><span data-l="uz">Ha, hajm kichrayganda sifat ma'lum darajada tushadi. Bu har qanday siqishda shunday. Hajmni qanchalik kichik tanlasangiz, farq shunchalik sezilarli bo'ladi. Siqilgan videodan asl nusxani qayta tiklab bo'lmaydi, shuning uchun asl faylni saqlab qo'ying.</span><span data-l="ru">Да, при уменьшении размера качество немного падает, это свойственно любому сжатию. Чем меньше целевой размер, тем заметнее разница. Оригинал из сжатого видео восстановить нельзя, поэтому сохраняйте исходный файл.</span><span data-l="en">Yes, shrinking the file costs some quality, as with any compression. The smaller the target, the more visible it is. The original cannot be restored from a compressed video, so keep your source file.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Videolarim serverga yuklanadimi?</span><span data-l="ru">Загружаются ли видео на сервер?</span><span data-l="en">Are my videos uploaded?</span></summary>
+      <p><span data-l="uz">Yo'q. Siqish butunlay sizning qurilmangizda, brauzer ichida bajariladi. Video hech qayerga yuborilmaydi.</span><span data-l="ru">Нет. Сжатие полностью выполняется на вашем устройстве, внутри браузера. Видео никуда не отправляется.</span><span data-l="en">No. Compression runs entirely on your device, inside the browser. The video is not sent anywhere.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Qanday hajmdagi videolar ishlaydi?</span><span data-l="ru">Какие по размеру видео подходят?</span><span data-l="en">What file sizes work?</span></summary>
+      <p><span data-l="uz">Brauzer xotirasi cheklangan, shuning uchun taxminan 1-2 GB gacha bo'lgan videolar yaxshi ishlaydi. Undan kattalari ishlamasligi mumkin. Brauzerda siqish oddiy dasturdan sekinroq: uzun video uchun ko'proq vaqt ketadi. Siqish paytida sahifani yopmang va kompyuter uxlab qolmasin.</span><span data-l="ru">Память браузера ограничена, поэтому видео примерно до 1-2 ГБ работают хорошо. Более крупные могут не обработаться. В браузере сжатие медленнее, чем в обычной программе: на длинное видео нужно больше времени. Не закрывайте страницу и не давайте компьютеру уснуть.</span><span data-l="en">Browser memory is limited, so videos up to roughly 1-2 GB work well; larger ones may fail. Compressing in a browser is slower than a desktop app, so long videos take more time. Keep the page open and do not let the computer sleep.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Qaysi brauzerlar mos?</span><span data-l="ru">Какие браузеры подходят?</span><span data-l="en">Which browsers work?</span></summary>
+      <p><span data-l="uz">Chrome va Edge tavsiya etiladi. Firefox va Safari'da ham ishlashi kerak, lekin ular kamroq sinalgan. Telefonda ishlaydi, lekin xotira kamligi sababli kompyuterda qulayroq.</span><span data-l="ru">Рекомендуем Chrome и Edge. В Firefox и Safari тоже должно работать, но там проверено меньше. На телефоне работает, но из-за нехватки памяти удобнее на компьютере.</span><span data-l="en">Chrome and Edge are recommended. Firefox and Safari should work too but are tested less. It works on phones, but a computer is more comfortable because of memory limits.</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Nega bepul rejimda kutish bor?</span><span data-l="ru">Почему в бесплатном режиме есть ожидание?</span><span data-l="en">Why is there a wait in free mode?</span></summary>
+      <p><span data-l="uz">Loyiha reklama hisobiga bepul ishlaydi. Kutish vaqtida reklama ko'rsatiladi. Reklamani ochsangiz, kutish qisqaradi. Premium rejim kutishsiz va reklamasiz bo'ladi (tez orada).</span><span data-l="ru">Проект бесплатен за счёт рекламы. Во время ожидания показывается реклама. Если открыть рекламу, ожидание сокращается. Premium будет без ожидания и без рекламы (скоро).</span><span data-l="en">The project is free thanks to ads. An ad is shown while you wait. Opening the ad shortens the wait. Premium will have no wait and no ads (coming soon).</span></p>
+    </details>
+
+    <details><summary><span data-l="uz">Siqish dvigateli nima?</span><span data-l="ru">Что за движок сжатия?</span><span data-l="en">What is the compression engine?</span></summary>
+      <p><span data-l="uz">Bu FFmpeg: video bilan ishlash uchun keng tarqalgan ochiq dastur, brauzerda ishlaydigan shaklga o'tkazilgan (WebAssembly). U alohida loyiha va o'z litsenziyasiga ega (ffmpeg.org).</span><span data-l="ru">Это FFmpeg: распространённая открытая программа для работы с видео, собранная для работы в браузере (WebAssembly). Это отдельный проект со своей лицензией (ffmpeg.org).</span><span data-l="en">It is FFmpeg, a widely used open-source video tool compiled to run in the browser (WebAssembly). It is a separate project with its own license (ffmpeg.org).</span></p>
+    </details>
+  </section>
+
+  <section id="privacy">
+    <h2><span data-l="uz">Maxfiylik siyosati</span><span data-l="ru">Политика конфиденциальности</span><span data-l="en">Privacy policy</span></h2>
+    <p data-l="uz">Videolaringiz, fayl nomlaringiz va shaxsiy ma'lumotlaringiz serverga yuborilmaydi va to'planmaydi. Hamma qayta ishlash sizning qurilmangizda bajariladi. Hisob ochish shart emas. Tanlangan til brauzeringizda saqlanadi (localStorage). Siqish dvigateli birinchi marta ochilganda ochiq CDN (unpkg yoki jsDelivr) dan yuklab olinadi: ular oddiy so'rov sifatida sizning IP manzilingizni ko'rishi mumkin. Reklama havolalari uchinchi tomon saytlarini ochadi, ularning o'z siyosati bor. Siyosat o'zgarsa, shu sahifada e'lon qilinadi.</p>
+    <p data-l="ru">Ваши видео, имена файлов и личные данные не отправляются и не собираются. Вся обработка выполняется на вашем устройстве. Регистрация не нужна. Выбранный язык хранится в вашем браузере (localStorage). При первом открытии движок сжатия загружается с публичного CDN (unpkg или jsDelivr): как при обычном запросе, они могут видеть ваш IP-адрес. Ссылки в рекламе открывают сторонние сайты со своей политикой. Если политика изменится, мы сообщим об этом на этой странице.</p>
+    <p data-l="en">Your videos, file names and personal data are not sent or collected. All processing happens on your device. No account is needed. Your language choice is stored in your browser (localStorage). The first time you open the tool, the compression engine is downloaded from a public CDN (unpkg or jsDelivr), which can see your IP address like any normal request. Ad links open third-party sites with their own policies. If this policy changes, it will be announced on this page.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> FlexVid ·
+    <a href="https://github.com/MRmaskMC/flexvid-site/issues"><span data-l="uz">Savol yoki xato haqida xabar bering</span><span data-l="ru">Вопросы и сообщения об ошибках</span><span data-l="en">Questions and bug reports</span></a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var html=document.documentElement, ok=['uz','ru','en'];
+  function set(l){
+    if(ok.indexOf(l)<0) l='uz';
+    html.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('on', b.dataset.set===l); });
+    try{ localStorage.setItem('fv_lang', l); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click', function(){ set(b.dataset.set); });
+  });
+  var saved=null; try{ saved=localStorage.getItem('fv_lang'); }catch(e){}
+  if(!saved){
+    var n=(navigator.language||'uz').slice(0,2).toLowerCase();
+    saved = n==='ru' ? 'ru' : n==='en' ? 'en' : 'uz';
+  }
+  set(saved);
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
