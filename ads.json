@@ -1,0 +1,14 @@
+{
+  "waitSeconds": 90,
+  "bonusSeconds": 30,
+  "watchSeconds": 10,
+  "maxBonuses": 3,
+  "ads": [
+    {
+      "title": "Reklama joyi bo'sh",
+      "text": "Bu yerda sizning reklamangiz bo'lishi mumkin.",
+      "image": "logo.png",
+      "link": "https://ibrohim363.github.io/flexvid-site/"
+    }
+  ]
+}
